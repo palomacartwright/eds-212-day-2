@@ -172,9 +172,9 @@ pre code {
 </div>
 
 
-<div id="derivates-in-r" class="section level3">
-<h3>Derivates in R</h3>
-<p>Find the derivate expression and slope at the indicated value for each of the following</p>
+<div id="first-order-univariate-derivates" class="section level3">
+<h3>First Order Univariate Derivates</h3>
+<p>Find the derivative expression and slope at the indicated value for each of the following</p>
 <p>Question A</p>
 <p><span class="math inline">\(f(x) = x^2\)</span> at <span class="math inline">\(x = 3\)</span></p>
 <pre class="r"><code>fx &lt;- expression(x^2)
@@ -211,6 +211,19 @@ dg_dt</code></pre>
 
 eval(expr = dg_dt)</code></pre>
 <pre><code>## [1] -4</code></pre>
+</div>
+<div id="higher-order-univariate-derivatives" class="section level3">
+<h3>Higher Order Univariate Derivatives</h3>
+<p>Find the second derivative with respect to z for <span class="math inline">\(G(z) = 4.6 - 1.9z^3\)</span>.</p>
+<pre class="r"><code>Gz &lt;- expression(4.6 - 1.9 * z ^ 3)
+#First derivative
+dG_dz &lt;- D(expr = Gz, name = &quot;z&quot;)
+dG_dz</code></pre>
+<pre><code>## -(1.9 * (3 * z^2))</code></pre>
+<pre class="r"><code>#Second derivative
+d2G_dz2 &lt;- D(expr = dG_dz, name = &quot;z&quot;)
+d2G_dz2</code></pre>
+<pre><code>## -(1.9 * (3 * (2 * z)))</code></pre>
 </div>
 
 

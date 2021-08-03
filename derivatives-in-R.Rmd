@@ -11,9 +11,9 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-### Derivates in R 
+### First Order Univariate Derivates 
 
-Find the derivate expression and slope at the indicated value for each of the following 
+Find the derivative expression and slope at the indicated value for each of the following 
 
 Question A 
 
@@ -66,6 +66,22 @@ t <- 0
 
 eval(expr = dg_dt)
 
+
+```
+
+### Higher Order Univariate Derivatives
+
+Find the second derivative with respect to z for $G(z) = 4.6 - 1.9z^3$.
+
+```{r}
+
+Gz <- expression(4.6 - 1.9 * z ^ 3)
+#First derivative
+dG_dz <- D(expr = Gz, name = "z")
+dG_dz
+#Second derivative
+d2G_dz2 <- D(expr = dG_dz, name = "z")
+d2G_dz2
 
 ```
 
