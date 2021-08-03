@@ -199,6 +199,18 @@ dP_da</code></pre>
 
 eval(expr = dP_da)</code></pre>
 <pre><code>## [1] 4214.784</code></pre>
+<p>Question C</p>
+<p><span class="math inline">\(g(t) = (-4t)/(t^2+1)^3)\)</span> at <span class="math inline">\(t = 0\)</span></p>
+<pre class="r"><code>gt &lt;- expression((-4 * t)*((t^2 + 1)^-3))
+
+dg_dt &lt;- D(expr = gt, name = &quot;t&quot;)
+dg_dt</code></pre>
+<pre><code>## -((-4 * t) * ((t^2 + 1)^-(3 + 1) * (3 * (2 * t))) + 4 * ((t^2 + 
+##     1)^-3))</code></pre>
+<pre class="r"><code>t &lt;- 0
+
+eval(expr = dg_dt)</code></pre>
+<pre><code>## [1] -4</code></pre>
 </div>
 
 
