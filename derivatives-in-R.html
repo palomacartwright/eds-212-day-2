@@ -172,7 +172,34 @@ pre code {
 </div>
 
 
+<div id="derivates-in-r" class="section level3">
+<h3>Derivates in R</h3>
+<p>Find the derivate expression and slope at the indicated value for each of the following</p>
+<p>Question A</p>
+<p><span class="math inline">\(f(x) = x^2\)</span> at <span class="math inline">\(x = 3\)</span></p>
+<pre class="r"><code>fx &lt;- expression(x^2)
 
+df_dx &lt;- D(expr = fx, name = &quot;x&quot;)
+
+df_dx</code></pre>
+<pre><code>## 2 * x</code></pre>
+<pre class="r"><code>x &lt;- 3 
+
+eval(expr = df_dx)</code></pre>
+<pre><code>## [1] 6</code></pre>
+<p>Question B</p>
+<p><span class="math inline">\(P(a) = 2(3a+2)^4 - 5\)</span> at <span class="math inline">\(a = 1.2\)</span></p>
+<pre class="r"><code>Pa &lt;- expression(2 * (3 * a + 2) ^ 4 - 5)
+
+dP_da &lt;- D(expr = Pa, name = &quot;a&quot;)
+
+dP_da</code></pre>
+<pre><code>## 2 * (4 * (3 * (3 * a + 2)^3))</code></pre>
+<pre class="r"><code>a &lt;- 1.2 
+
+eval(expr = dP_da)</code></pre>
+<pre><code>## [1] 4214.784</code></pre>
+</div>
 
 
 
